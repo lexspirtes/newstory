@@ -5,6 +5,9 @@ import Latest from './latest';
 import Search from './search';
 import { Route, BrowserRouter as Router } from 'react-router-dom'
 
+/**
+ * routes for app
+ */
 const routing = (
   <Router>
     <div>

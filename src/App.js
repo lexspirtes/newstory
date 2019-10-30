@@ -1,17 +1,17 @@
 import React from 'react';
-import { Link } from 'react-router-dom'
+import './styles.css'
+
+/**
+ * App Component
+ * holds links to Latest and Search
+ */
 class App extends React.Component {
-  constructor(props){
-    super(props);
-  }
-
-
 render() {
   return (
     <div>
-      <h1>Hello</h1>
-      <Link className="latest" to="/">Latest</Link>
-      <Link className="search" to="/search">Search</Link>
+      <h1>XKCD COMICS</h1>
+      <a className="latest" href="/">Latest</a>
+      <a className="search" href="/search">Search</a>
     </div>
   );
 }

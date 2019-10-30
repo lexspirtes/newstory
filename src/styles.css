@@ -1,0 +1,88 @@
+a {
+  color: #c4adbf;
+  margin-right: 10px;
+  margin-bottom: 10px;
+  text-decoration: none;
+  font-family: 'Bungee', cursive;
+  font-size: 15px;
+  padding: 4px;
+}
+
+a:hover {
+  color:#704366;
+}
+
+img {
+  margin-top: 10px;
+  max-height: 500px;
+}
+
+form {
+  margin-top: 20px;
+}
+
+input[type=number] {
+  border: solid 1px #CCC;
+    height: 21px;
+    width: 150px;
+    border-top-left-radius: 3px;
+    border-bottom-left-radius: 3px;
+    font-size: 15px;
+    color: #999;
+    padding-left: 5px;
+    vertical-align: bottom
+}
+
+input[type=submit] {
+  border: solid 1px #704366;
+  border-top-right-radius: 3px;
+  border-bottom-right-radius: 3px;
+  height: 25px;
+  width: 75px;
+  color: white;
+  font-size: 13px;
+  font-family: 'Bungee', cursive;
+  background-color: #704366;
+}
+input:hover[type=submit]{
+  color: #f7f0ff;
+}
+
+h1 {
+  font-family: 'Bungee Shade', cursive;
+  font-size: 30px;
+  color: #850042;
+
+}
+@keyframes bgcolor {
+    0% {
+        background-color: #fffafe
+    }
+
+    30% {
+        background-color: #fffaff
+    }
+
+    60% {
+        background-color: #fdfaff
+    }
+
+    90% {
+        background-color: #fcfaff
+    }
+
+    100% {
+        background-color: #fafaff
+    }
+}
+
+body {
+  margin-left: 40px;
+  -webkit-animation: bgcolor 20s infinite;
+  animation: bgcolor 10s infinite;
+  -webkit-animation-direction: alternate;
+  animation-direction: alternate;
+}
+
+@import url('https://fonts.googleapis.com/css?family=Bungee+Inline|Bungee+Shade|Righteous&display=swap');
+@import url('https://fonts.googleapis.com/css?family=Bungee&display=swap');

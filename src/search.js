@@ -1,6 +1,8 @@
 import React from 'react';
 
-
+/**
+ * General component description in JSDoc format. Markdown is *supported*.
+ */
 class Search extends React.Component {
   constructor(props){
     super(props);
@@ -39,7 +41,7 @@ class Search extends React.Component {
     return (
       <div>
       <form onSubmit={this.handleSubmit}>
-              <input className="searchInput" type="text" value={this.state.value} onChange={this.handleChange} />
+              <input className="searchInput" type="number" value={this.state.value} onChange={this.handleChange} />
             <input className="searchSubmit" type="submit" value="Submit" />
       </form>
       <img className="searchImage" src={this.state.img} title={this.state.title} alt={this.state.alt} />

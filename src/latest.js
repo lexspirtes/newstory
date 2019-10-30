@@ -1,6 +1,10 @@
 import React from 'react';
 
 
+/**
+ * Latest component
+ *
+ */
 class Latest extends React.Component {
   constructor(props){
     super(props);
