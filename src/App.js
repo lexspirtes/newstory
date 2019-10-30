@@ -1,11 +1,22 @@
-import React from 'react';
+import React, { Component } from 'react';
+import { Link } from 'react-router-dom'
+class App extends React.Component {
+  constructor(props){
+    super(props);
+  }
 
-function App() {
+
+render() {
   return (
     <div>
-      <p>Hello World</p>
+      <h1>Hello</h1>
+      <Link className="latest" to="/">Latest</Link>
+      <Link className="search" to="/search">Search</Link>
     </div>
   );
 }
+}
+
+
 
 export default App;
