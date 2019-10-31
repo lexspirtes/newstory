@@ -3,7 +3,7 @@ import './styles.css'
 
 /**
  * App Component
- * holds links to Latest and Search
+ * displays links to Latest and Search
  */
 class App extends React.Component {
 render() {

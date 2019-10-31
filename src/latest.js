@@ -3,15 +3,21 @@ import React from 'react';
 
 /**
  * Latest component
- *
+ * state is latest comic from XKCD API
  */
 class Latest extends React.Component {
   constructor(props){
     super(props);
-    this.state = {img: "", title:"", alt:""};
+    this.state = {comic: ""};
   }
 
+  /** fetchContent upon mount */
   componentDidMount(){
+    this.fetchContent()
+}
+
+  /** API call and sets state to latest comic */
+  fetchContent() {
     fetch('https://xkcd.now.sh/?comic=latest', {
       method: 'GET',
       headers: {
@@ -23,15 +29,18 @@ class Latest extends React.Component {
       return response.text();
     })
     .then((data) => {
-      let parsed = JSON.parse(data)
-      this.setState({latestImage: parsed.img, title:parsed.alt, alt: parsed.title})
+      this.setState({comic: JSON.parse(data)})
     })
-}
+  }
 
   render() {
     return (
       <div>
-        <img className="latestImage" src={this.state.latestImage} title={this.state.title} alt={this.state.alt} />
+        <img className="latestImage"
+             src={this.state.comic.img}
+             title={this.state.comic.alt}
+             alt={this.state.comic.title}
+        />
       </div>
     );
   }

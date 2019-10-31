@@ -1,25 +1,32 @@
 import React from 'react';
 
 /**
- * General component description in JSDoc format. Markdown is *supported*.
+ * Search component
+ * state is id number inputted by user and comic with that ID number
  */
 class Search extends React.Component {
   constructor(props){
     super(props);
-    this.state = {id:"", img:"", title:"", alt:""};
+    this.state = {id:"", comic:""};
 
     this.handleChange = this.handleChange.bind(this);
     this.handleSubmit = this.handleSubmit.bind(this);
   }
 
+  /** handler for input form change */
   handleChange(event) {
     this.setState({id: event.target.value});
   }
 
+  /** handler for submit button */
   handleSubmit(event) {
     event.preventDefault();
-    //put in valid thing
-    fetch('https://xkcd.now.sh/?comic=' + this.state.id, {
+    this.fetchContent(this.state.id)
+  }
+
+  /** API call and sets state to comic with inputted ID */
+  fetchContent(id) {
+    fetch('https://xkcd.now.sh/?comic=' + id, {
       method: 'GET',
       headers: {
         'Accept': 'application/json',
@@ -30,21 +37,26 @@ class Search extends React.Component {
       return response.text();
     })
     .then((data) => {
-      let parsed = JSON.parse(data)
-      this.setState({img: parsed.img, title: parsed.alt, alt:parsed.title})
+      this.setState({comic: JSON.parse(data)})
     })
-    console.log(this.state)
   }
-
 
   render() {
     return (
       <div>
       <form onSubmit={this.handleSubmit}>
-              <input className="searchInput" type="number" value={this.state.value} onChange={this.handleChange} />
+            <input className="searchInput"
+                   type="number"
+                   value={this.state.value}
+                   onChange={this.handleChange}
+            />
             <input className="searchSubmit" type="submit" value="Submit" />
       </form>
-      <img className="searchImage" src={this.state.img} title={this.state.title} alt={this.state.alt} />
+      <img className="searchImage"
+           src={this.state.comic.img}
+           title={this.state.comic.alt}
+           alt={this.state.comic.title}
+      />
       </div>
     );
   }
