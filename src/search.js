@@ -21,6 +21,9 @@ class Search extends React.Component {
   /** handler for submit button */
   handleSubmit(event) {
     event.preventDefault();
+    if (this.state.id < 1 || this.state.id > 2219) {
+      alert("please enter a value between 1 and 2219")
+    }
     this.fetchContent(this.state.id)
   }
 
